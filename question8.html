@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+                font-family: 'Arial', sans-serif;
+                background-color:  #427D9D;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    
+            section {
+                text-align: left;
+                margin: 20px;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+    
+            .question {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+    
+            .options {
+                margin-top: 10px;
+            }
+    
+            label {
+                display: block;
+                margin-bottom: 8px;
+            }
+    
+            input {
+                margin-right: 5px;
+            }
+    
+            button {
+                display: block;
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: #3498db;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+     </style>
+</head>
+<body>
+    <section>
+    <div class="question">
+        What's the weirdest or funniest thing that happened to you during a class ?
+    </div>
+    <div class="options">
+        <label><input type="radio" name="q8" value="a"> Accidentally speaking in a regional language during a online meeting</label>
+        <label><input type="radio" name="q8" value="b"> Getting caught napping during class</label>
+        <label><input type="radio" name="q8" value="c"> Sending a hilarious meme in the school group by mistake</label>
+        <label><input type="radio" name="q8" value="d"> Mistaking the teacher for someone else and having a casual conversation</label>
+    </div>
+
+    <input type="button" onclick="fun()" value="Next Question">
+</section>
+<script >
+      
+
+    function fun() {
+        var q8_first=null
+var radios = document.getElementsByName('q8');
+
+
+for (var i = 0; i < radios.length; i++) {
+  if (radios[i].checked) {
+  
+    q8_first = radios[i].value;
+   localStorage.setItem("q8_first_l",q8_first)
+   window.location.href="frpage.html"
+        console.log(q8_first)
+    break
+  }
+  
+
+  }
+  if(q8_first==null ){
+    alert("Select one option")
+    value=false
+  
+    window.reload()
+
+}
+  
+
+}
+
+</script>
+</body>
+</html>

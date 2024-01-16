@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+                font-family: 'Arial', sans-serif;
+                background-color: #164863;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    
+            section {
+                text-align: left;
+                margin: 20px;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+    
+            .question {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+    
+            .options {
+                margin-top: 10px;
+            }
+    
+            label {
+                display: block;
+                margin-bottom: 8px;
+            }
+    
+            input {
+                margin-right: 5px;
+            }
+    
+            button {
+                display: block;
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: #3498db;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+     </style>
+</head>
+<body>
+    <section>
+        <div class="question">
+            What activity does your friend find most captivating, something him/her could lose track of time doing?
+        </div>
+    <form>
+    <div class="options" >
+        <label><input type="radio" name="q1" value="a" required> Reading</label>
+        <label><input type="radio" name="q1" value="b" > Playing cricket</label>
+        <label><input type="radio" name="q1" value="c" > Cooking</label>
+        <label><input type="radio" name="q1" value="d" > Outdoor activities like biking</label>
+        <label><input type="radio" name="q1" value="e" > Watching Bollywood movies</label>
+    </div>
+
+    
+    <input type="button" onclick="fun()" value="Next Question">
+</form>
+</section>
+
+<script >
+  
+    function fun() {
+        var q1_first=null
+        var score=0
+var radios = document.getElementsByName('q1');
+
+
+for (var i = 0; i < radios.length; i++) {
+  if (radios[i].checked) {
+  
+    q1_first = radios[i].value;
+   localStorage.setItem("q1_second_l",q1_first)
+   window.location.href="frques2.html"
+        console.log(q1_first)
+    break
+  }
+  
+
+  }
+  if(q1_first==null ){
+    alert("Select one option")
+    value=false
+  
+    window.reload()
+
+}
+q1_first_l=localStorage.getItem("q1_first_l")
+q1_second_l=localStorage.getItem("q1_second_l")
+localStorage.setItem("score",0)
+if(q1_first_l==q1_second_l){
+    score+=1
+    localStorage.setItem("score",score)
+}
+
+
+}
+
+</script>
+
+
+</body>
+</html>

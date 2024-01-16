@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+                font-family: 'Arial', sans-serif;
+                background-color: #164863;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    
+            section {
+                text-align: left;
+                margin: 20px;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+    
+            .question {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+    
+            .options {
+                margin-top: 10px;
+            }
+    
+            label {
+                display: block;
+                margin-bottom: 8px;
+            }
+    
+            input {
+                margin-right: 5px;
+            }
+    
+            button {
+                display: block;
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: #3498db;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+     </style>
+</head>
+<body>
+    <section>
+        <div class="question">
+            What's a secret talent or skill that you have that not many people know about?
+        </div>
+        <div class="options">
+        <label><input type="radio" name="q7" value="a"> Amazing dance moves</label>
+        <label><input type="radio" name="q7" value="b"> Impersonations of famous personalities</label>
+        <label><input type="radio" name="q7" value="c"> Exceptional cooking skills</label>
+        <label><input type="radio" name="q7" value="d"> Superb storytelling ability</label>
+        </div>
+        
+    <input type="button" onclick="fun()" value="Next Question">
+</section>
+
+<script >
+      
+
+    function fun() {
+        var q7_first=null
+var radios = document.getElementsByName('q7');
+
+
+for (var i = 0; i < radios.length; i++) {
+  if (radios[i].checked) {
+  
+    q7_first = radios[i].value;
+   localStorage.setItem("q7_second_l",q7_first)
+   window.location.href="frques8.html"
+        console.log(q7_first)
+    break
+  }
+  
+
+  }
+  if(q7_first==null ){
+    alert("Select one option")
+    value=false
+  
+    window.reload()
+
+}
+q7_first_l=localStorage.getItem("q7_first_l")
+q7_second_l=localStorage.getItem("q7_second_l")
+score=parseInt(localStorage.getItem("score"))
+if(q7_first_l==q7_second_l){
+    score+=1
+    localStorage.setItem("score",score)
+}
+
+
+
+}
+
+</script>
+</body>
+</html>

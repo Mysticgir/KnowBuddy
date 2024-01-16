@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnowBuddy Result</title>
+    <style>
+        body {
+            background-color: #176B87;
+        }
+
+        section {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            height: 550px;
+            width: 300px;
+            margin-top: 250px;
+            margin-left: 20px;
+            text-align: center;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        h1 {
+            color: #3498db;
+        }
+
+        p {
+            font-size: 30px;
+           
+           font-family:  cursive	; 
+        }
+
+        .dot {
+            height: 150px;
+            width: 150px;
+            background-color: #164863;
+            border-radius: 50%;
+            margin-left: 10px;
+            display: inline-block;
+            line-height: 150px; 
+            font-size: 24px;
+            color: white;
+            animation: fadeIn 1.5s ease-out;
+        }
+        img{
+            height: 200px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <section>
+        <span class="dot" id="hello"> </span>
+        <p></p>
+        <img src="" alt="" id="hii">
+    </section>
+
+    <script>
+        score = localStorage.getItem("score");
+        var b = ((score / 8) * 100);
+
+        console.log(b);
+
+        if (b >= 90) {
+            document.getElementById('hello').innerHTML = b + "%";
+            document.getElementById('hello').style.textAlign = 'center';
+            document.querySelector('p').innerHTML = "A true friend is one soul in two bodies.";
+            document.getElementById('hii').src = "image_1.jpg";
+        } else if (b >= 80 && b < 90) {
+            document.getElementById('hello').innerHTML = b + "%";
+            document.querySelector('p').innerHTML = "Besides chocolate, you’re my favorite.";
+            document.getElementById('hii').src = "image_3.jpg";
+        } else if (b >= 70 && b < 80) {
+            document.getElementById('hello').innerHTML = b + "%";
+            document.querySelector('p').innerHTML = "Good Times + Crazy Friends = Great Memories!";
+            document.getElementById('hii').src = "image_4.jpg";
+        } else if (b >= 60 && b < 70) {
+            document.getElementById('hello').innerHTML = b + "%";
+            document.querySelector('p').innerHTML = "I’ll even send you the photos I look bad in.";
+            document.getElementById('hii').src = "image_5.jpg";
+        } else {
+            document.getElementById('hello').innerHTML = b + "%";
+            document.querySelector('p').innerHTML = "No friendship is an accident";
+            document.getElementById('hii').src = "image_6.jpg";
+        }
+    </script>
+</body>
+
+</html>

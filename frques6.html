@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+                font-family: 'Arial', sans-serif;
+                background-color: #164863;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    
+            section {
+                text-align: left;
+                margin: 20px;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+    
+            .question {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+    
+            .options {
+                margin-top: 10px;
+            }
+    
+            label {
+                display: block;
+                margin-bottom: 8px;
+            }
+    
+            input {
+                margin-right: 5px;
+            }
+    
+            button {
+                display: block;
+                margin-top: 20px;
+                padding: 10px 20px;
+                background-color: #3498db;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+     </style>
+</head>
+<body>
+    <section>
+        <div class="question">
+            What will be her/his all-time favorite movie ? 
+        </div>
+        <div class="options">
+        <label><input type="radio" name="q6" value="a">  Dilwale Dulhania Le Jayenge - The epitome of love and romance</label>
+        <label><input type="radio" name="q6" value="b"> Sholay - A timeless classic with memorable characters</label>
+        <label><input type="radio" name="q6" value="c"> Bahubali - Epic action and visual spectacle</label>
+        <label><input type="radio" name="q6" value="d"> Queen - A journey of self-discovery and empowerment </label>
+        </div>
+   
+        <input type="button" onclick="fun()" value="Next Question">
+    </section>
+    
+    <script >
+          
+    
+        function fun() {
+            var q6_first=null
+    var radios = document.getElementsByName('q6');
+    
+    
+    for (var i = 0; i < radios.length; i++) {
+      if (radios[i].checked) {
+      
+        q6_first = radios[i].value;
+       localStorage.setItem("q6_second_l",q6_first)
+       window.location.href="frques7.html"
+            console.log(q6_first)
+        break
+      }
+      
+    
+      }
+      if(q6_first==null ){
+        alert("Select one option")
+        value=false
+      
+        window.reload()
+    
+    }
+    q6_first_l=localStorage.getItem("q6_first_l")
+q6_second_l=localStorage.getItem("q6_second_l")
+score=parseInt(localStorage.getItem("score"))
+if(q6_first_l==q6_second_l){
+    score+=1
+    localStorage.setItem("score",score)
+}
+
+
+    
+    }
+    
+    </script>
+</body>
+</html>
